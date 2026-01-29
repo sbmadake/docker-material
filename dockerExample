@@ -1,0 +1,31 @@
+
+
+STEP 1: Build Docker image
+docker build -t my-js-app .
+docker images
+
+STEP 2: Run locally (test first)
+docker run -p 3000:3000 my-js-app
+
+
+STEP 3: Login to Docker Hub
+docker login
+
+
+
+STEP 4: Tag the image for Docker Hub
+
+Format:
+
+docker tag <local-image> <dockerhub-username>/<repo-name>:<tag>
+Example:
+
+docker tag my-js-app elktraining/my-js-app:v1
+
+
+docker images
+
+
+STEO 5: Push image to Docker Hub
+
+docker push elktraining/my-js-app:v1
